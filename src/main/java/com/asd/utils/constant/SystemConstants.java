@@ -8,7 +8,7 @@ public class SystemConstants {
     public static final String TYPE_ENC = "AES";
     public static final String TYPE_HASHING = "SHA-256";
     public static final String THE_KEY_FOR_TOKEN = "RMxFVV95Y4Djnv7RouEsrs0eOHdmZ4st";
-    public static final String THE_KEY_FOR_ENC = "RMxFVV95Y4Djnv7RouEsrs0eOHdmZ4st";
+    public static final String THE_KEY_FOR_ENC = "GXBD91tMbO47qkExaDLuOVU6K4fEu0V8";
     public static final String CANNT_LOGIN ="cannot login something went wrong";
     public static final String IP_HEADER = "X-Forwarded-For";
     public static final String TOKEN_NAME_ON_HEADER = "token";

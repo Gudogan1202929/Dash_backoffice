@@ -9,7 +9,6 @@ import lombok.*;
 @Entity
 @Table(name = "user_table")
 public class UserModel {
-
         @Id
         @SequenceGenerator(name = "user_table_sequence",
                 sequenceName = "user_table_sequence",

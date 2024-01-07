@@ -127,15 +127,19 @@ public class FilterMethods {
                 break;
             default:
                 message = SystemConstants.UNKNOWN_STATUS_CODE + statusCode;
-                ;
                 break;
         }
+
         String entity = "";
-        try {
-            entity = containerResponseContext.getEntity().toString();
-        } catch (Exception e) {
-            containerResponseContext.setEntity(statusCode + " : " + message + "\n" + entity);
+        if ((statusCode == 200 || statusCode == 201 || statusCode == 202)) {
+             entity = containerResponseContext.getEntity().toString();
+        }else{
+            try {
+                entity = containerResponseContext.getEntity().toString();
+                containerResponseContext.setEntity(statusCode + " : " + message + "\n" + entity);
+            }catch (Exception e){
+                containerResponseContext.setEntity(statusCode + " : " + message + "\n" + entity);
+            }
         }
-        containerResponseContext.setEntity(statusCode + " : " + message + "\n" + entity);
     }
 }

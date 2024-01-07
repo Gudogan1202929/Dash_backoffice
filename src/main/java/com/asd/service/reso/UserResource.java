@@ -18,6 +18,7 @@ import jakarta.ws.rs.core.Response;
 public class UserResource {
     private static final UserController userController = new UserController();
 
+
     @POST
     @Transactional
     @Path(SystemPaths.LOGIN_PATH)
@@ -25,20 +26,17 @@ public class UserResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Response login(UserModel userModel){
         try {
-            System.out.println(userModel.getUsername() + " " + userModel.getPassword());
-            System.out.println(Encryption.Decrypt(userModel.getPassword()));
             boolean isUserExist = userController.login(userModel);
             JWTModel jwtModel = new JWTModel();
             if (isUserExist){
                 String jwt = CreatingJWT.createJWT(userModel.getUsername(),SystemConstants.TOKEN_EXPIRATION_TIME);
                 jwtModel.setJWTToken(jwt);
+                System.out.println();
             }
-            return Response.ok(jwtModel).build();
+            return Response.ok(jwtModel.getJWTToken()).build();
         }catch (Exception e){
-            System.out.println(e.getMessage());
             return Response.status(Response.Status.BAD_REQUEST).build();
         }
     }
 
-    public static final BlackListRepo blackListRepo = new BlackListRepo();
 }

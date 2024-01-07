@@ -16,7 +16,6 @@ public class Filter implements ContainerRequestFilter, ContainerResponseFilter {
     @Override
     public void filter(ContainerRequestContext containerRequestContext) throws IOException {
         FilterMethods.filter(containerRequestContext);
-        
     }
     @Override
     public void filter(ContainerRequestContext containerRequestContext, ContainerResponseContext containerResponseContext) throws IOException {

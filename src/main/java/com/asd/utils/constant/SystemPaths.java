@@ -1,6 +1,10 @@
 package com.asd.utils.constant;
 
 public class SystemPaths {
+
+    public static final String DeleteMobileUserRes = "/delete";
+    public static final String UpdateMobileUserRes = "/update";
+    public static final String CreateMobileUserRes = "/create";
     public static final String USER_PATH = "/user";
     public static final String LOGIN_PATH = "/login";
     public static final String CompanyCountReportRes = "/company/count/report";
@@ -13,4 +17,5 @@ public class SystemPaths {
     public static final String MobileUserRes = "/mobile/user";
     public static final String ReportRes = "/report";
     public static final String RulesRes = "/rules";
+    public static final String RetrieveNumberUser = "/number/user";
 }
